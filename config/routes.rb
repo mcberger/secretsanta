@@ -27,6 +27,14 @@ Rails.application.routes.draw do
   #     end
   #   end
 
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get '/' => 'home#index', as: :home
+
+  resources :users
+  resources :events
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
