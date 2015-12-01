@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+
+  get 'sessions/create'
+
+  get 'sessions/new'
+
+  get 'sessions/destroy'
+
+  get 'home/index'
+
+  get 'home/create'
+
+  get 'home/new'
+
+  get 'home/destroy'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
