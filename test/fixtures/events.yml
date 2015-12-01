@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-12-01 12:29:22
+  name: MyString
+  deadline: 2015-12-01 12:29:22
+  location: MyString
+  max_price: 9.99
+  min_price: 9.99
+
+two:
+  date: 2015-12-01 12:29:22
+  name: MyString
+  deadline: 2015-12-01 12:29:22
+  location: MyString
+  max_price: 9.99
+  min_price: 9.99
