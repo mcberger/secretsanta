@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/index'
 
   get 'sessions/create'
@@ -14,6 +15,19 @@ Rails.application.routes.draw do
   get 'home/new'
 
   get 'home/destroy'
+
+  get 'events/index'
+
+  get 'events/show'
+
+  get 'events/new'
+
+  get 'events/create'
+
+  get 'events/edit'
+
+  get 'events/destroy'
+
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
