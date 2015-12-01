@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  giftee: 1
+  gifter: 1
+  event_id: 1
+
+two:
+  giftee: 1
+  gifter: 1
+  event_id: 1
