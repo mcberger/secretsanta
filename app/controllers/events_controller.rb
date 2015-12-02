@@ -1,8 +1,14 @@
 class EventsController < ApplicationController
   def index
+    @events = Event.all
+
   end
 
   def show
+    @event = Event.find(params[:id])
+    join = EventUser.where(event_id: @event.id, admin: true).last
+    user = User.where(id: join.user_id).last
+    @host = user.email 
   end
 
   def new
@@ -14,6 +20,7 @@ class EventsController < ApplicationController
     @user = current_user
     if @event.save 
       current_user.events << @event
+      EventUser.last.update admin: true
       UserMailer.new_event(@event, @user).deliver_later
       flash[:notice] = "Your event was created."
       redirect_to event_path @event

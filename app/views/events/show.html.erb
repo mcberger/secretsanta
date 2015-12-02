@@ -1,2 +1,15 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1><%= @event.name %></h1>
+<br>
+<b>Date: </b><%= @event.date %>
+<br>
+<b>Location: </b><%= @event.location%>
+<br>
+<b>Last possible day to backout: </b><%= @event.deadline%>
+<br>
+<b>Host: </b><%= @host %>
+<br>
+<b>Maximum gift price: </b><%= @event.max_price%>
+<br>
+<b>Minimum gift price: </b><%= @event.min_price%>
+<br>
+<b>Participants:</b>
