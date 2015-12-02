@@ -35,6 +35,7 @@ class EventsController < ApplicationController
   end
 
   def update
+    redirect_to event_path params[:id]
   end
 
   def destroy
