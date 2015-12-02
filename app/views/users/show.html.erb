@@ -1,9 +1,17 @@
-<h1>Users#show</h1>
+<h1><%= "Welcome #{@user.username}!" %></h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
 <p>The following functions need to live on this page:</p>
 
 <p>Some basic profile information.</p>
+
+<h2><%= "#{@user.fname} #{@user.lname}" %></h2>
+<h2><%= @user.address %></h2>
+<h2><%= @user.phone %></h2>
+<h2><%= @user.email %></h2>
+<h2><%= @user.likes %></h2>
+<h2><%= @user.dislikes %></h2>
+<h2><%= @user.add_info %></h2>
 
 <p>Link to edit profile</p>
 <%= link_to "Edit Profile", edit_user_registration_path %>
