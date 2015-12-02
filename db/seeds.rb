@@ -49,5 +49,11 @@ User.create(fname:"Barack",lname:"Obama",username:"baroba",
 		dislikes:"The opposition, jellybeans, broccoli",
 		add_info:"")
 
-Event.create(date:Time.now,name:"Christmas 2015",deadline:Time.now + 15.days,
+Event.create(date:Time.now-360.days,name:"Christmas 2014",deadline:Time.now - 365.days,
 	location:"Amsterdam",max_price:25.00,min_price:15.00)
+Event.create(date:Time.now + 22.days,name:"Christmas 2015",deadline:Time.now + 15.days,
+	location:"Amsterdam",max_price:25.00,min_price:15.00)
+Event.create(date:Time.now + 388.days,name:"Christmas 2016",deadline:Time.now + 373.days,
+	location:"Amsterdam",max_price:25.00,min_price:15.00)
+
+
