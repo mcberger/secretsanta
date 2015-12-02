@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
 	def new_event(event, user)
 		@event = event
 		@user = user
-		@url = 'http://localhost:3000/events/<%= @event.id%>'
+		@url = "http://localhost:3000/events/#{@event.id}"
 		mail(to: @user.email, subject: 'New event created!')
 	end
 end
