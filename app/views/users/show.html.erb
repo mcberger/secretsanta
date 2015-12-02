@@ -5,3 +5,29 @@
 <%= link_to "ADD Event", new_event_path %>
 
 <%= link_to "event", event_path %>
+=======
+<p>The following functions need to live on this page:</p>
+
+<p>Some basic profile information.</p>
+
+<p>Link to edit profile</p>
+<%= link_to "Edit Profile", edit_user_registration_path %>
+
+<p>link to create an event - or duplicate an event with users.</p>
+<%= link_to "Add an Event", new_event_path %>
+
+<p>Should show clickable impending events in one section</p>
+
+<% @pending_events.each do |event| %>
+	<p>
+		<%= link_to event.name, event_path(event.id) %>
+	</p>
+<% end %>
+
+
+<p>should show clickable ended events in another</p>
+<% @past_events.each do |event| %>
+	<p>
+		<%= link_to event.name, event_path(event.id) %>
+	</p>
+<% end %>

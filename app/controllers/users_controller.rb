@@ -16,5 +16,22 @@ class UsersController < ApplicationController
 
   def show
     
+    # get user and associated events
+    #
+    user = User.find current_user
+    events = user.events
+    #
+    # separate user's events into pending and past
+    #
+    @pending_events = []
+    @past_events = []
+
+    events.each do |event|
+      if event.date >= Time.now
+        @pending_events << event
+      else
+        @past_events << event
+      end
+    end
   end
 end
