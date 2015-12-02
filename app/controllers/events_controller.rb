@@ -7,15 +7,14 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @user = User.find_by_id(params[:user_id])
   end
 
   def create
-    @user = User.find_by_id(params[:user_id])
     @event = Event.new(event_params)
-    if @event.save
-      @user.events << @event
-      UserMailer.new_event(@user).deliver_later
+    @user = current_user
+    if @event.save 
+      current_user.events << @event
+      UserMailer.new_event(@event, @user).deliver_later
       flash[:notice] = "Your event was created."
       redirect_to event_path @event
     else 
