@@ -1,15 +1,32 @@
-<h1><%= @event.name %></h1>
-<br>
-<b>Date: </b><%= @event.date %>
-<br>
-<b>Location: </b><%= @event.location%>
-<br>
-<b>Last possible day to backout: </b><%= @event.deadline%>
-<br>
-<b>Host: </b><%= @host %>
-<br>
-<b>Maximum gift price: </b><%= @event.max_price%>
-<br>
-<b>Minimum gift price: </b><%= @event.min_price%>
-<br>
-<b>Participants:</b>
+<div class="container">
+	<div class = "row">
+		<div class="col-md-8">
+
+			<h1><%= @event.name %></h1>
+			<br>
+			<b>Date: </b><%= @event.date %>
+			<br>
+			<b>Location: </b><%= @event.location%>
+			<br>
+			<b>Last possible day to backout: </b><%= @event.deadline%>
+			<br>
+			<b>Host: </b><%= @host %>
+			<br>
+			<b>Maximum gift price: </b><%= @event.max_price%>
+			<br>
+			<b>Minimum gift price: </b><%= @event.min_price%>
+			<br>
+			<b>Participants:</b>
+			<% @users.each do |user| %>
+				<p>
+				<%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %>
+				</p>
+			<% end %>
+		</div>
+		<div class="col-md-4">
+			<p><%= link_to "Edit this event", edit_event_path(@event.id) %></p>
+			<p><%= link_to "Add a User to this event", users_path(@event.id) %></p>
+			<p><%= link_to "Create a User for this event", new_user_path(@event.id) %></p>
+		</div>
+	</div>
+</div>			

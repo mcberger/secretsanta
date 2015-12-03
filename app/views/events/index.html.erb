@@ -1,10 +1,18 @@
-<h1>All Events</h1>
+<div class="container">
+	<div class = "raw">
+		<div class="col-md-08">
 
-<ul>
-	<% @events.each do |event| %>
-	<% join = EventUser.where(event_id: event.id, admin: true).last %>
-    <% user = User.where(id: join.user_id).last %>
-    <% @host = user.email %>
-		<li> <%= link_to event.name, event_path(event) %> hosted by <%=@host %> </li>
-	<% end %>
-</ul>
+			<h1>All Events</h1>
+
+			<ul>
+				<% @events.each do |event| %>
+				<% join = EventUser.where(event_id: event.id, admin: true).last %>
+				<% user = User.where(id: join.user_id).last %>
+				<% @host = user.email %>
+				<li> <%= link_to event.name, event_path(event) %> hosted by <%=@host %> </li>
+				<% end %>
+			</ul>
+
+		</div>
+	</div>
+</div>

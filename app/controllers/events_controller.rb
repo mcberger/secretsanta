@@ -1,14 +1,14 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-
   end
 
   def show
     @event = Event.find(params[:id])
     join = EventUser.where(event_id: @event.id, admin: true).last
-    user = User.where(id: join.user_id).last
+    user = User.find join.user_id
     @host = user.email 
+    @users = @event.users
   end
 
   def new
@@ -19,6 +19,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @user = current_user
     if @event.save 
+      #
+      # User has created an event so is now designated an admin.
+      # Set the admin field on the EventUser table.
+      #
       current_user.events << @event
       EventUser.last.update admin: true
       UserMailer.new_event(@event, @user).deliver_later
@@ -35,6 +39,16 @@ class EventsController < ApplicationController
   end
 
   def update
+    #
+    # get the current event and update it with the data supplied by the user
+    #
+    event = Event.find params[:id]
+    if event
+      event.update event_params
+      flash[:notice] = "Your event was modified successfully."
+    else
+       flash[:alert] = "There was a problem editing your event."
+    end     
     redirect_to event_path params[:id]
   end
 
