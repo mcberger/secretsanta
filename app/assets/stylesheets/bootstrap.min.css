@@ -10,3 +10,9 @@
 	margin-bottom: 100px;
 	margin-top: 75px;
  }
+
+.animated.bounceIn,
+.animated.bounceOut {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
