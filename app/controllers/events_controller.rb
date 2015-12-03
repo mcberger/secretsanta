@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     user = User.find join.user_id
     @host = user.email 
     @users = @event.users
+    User.Mailer.gift_assigned(@event, @users).deliver_later
     @title = @event.name
   end
 
