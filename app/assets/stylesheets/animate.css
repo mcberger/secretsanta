@@ -33,8 +33,8 @@ Copyright (c) 2015 Daniel Eden
 
 .animated.flipOutX,
 .animated.flipOutY {
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
+  -webkit-animation-duration: 7s;
+  animation-duration: 7s;
 }
 
 @-webkit-keyframes bounce {

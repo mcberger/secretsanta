@@ -20,8 +20,16 @@
 		<%= link_to 'login', new_user_session_path %>
 	<% end %>
 
-	<%= flash[:notice] %>
-	<%= flash[:alert] %>
+	<% if flash[:notice] %>
+		<div class="flash "> 
+			<%= flash[:notice]%> 
+		</div>
+	<% elsif flash[:alert]  %>
+		<div class="flash "> 
+			<%= flash[:alert] if flash[:alert]%>
+		</div>
+	<% else %>
+	<% end %>
 	<%= yield %>
 </body>
 </html>
