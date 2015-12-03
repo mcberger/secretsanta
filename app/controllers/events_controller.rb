@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     @host = user.email 
     @users = @event.users
     @allusers = User.all
-    User.Mailer.gift_assigned(@event, @users).deliver_later
+    #User.Mailer.gift_assigned(@event, @users).deliver_later
     @title = @event.name
   end
 
