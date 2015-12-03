@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+    @title = 'All events'
   end
 
   def show
@@ -10,10 +11,12 @@ class EventsController < ApplicationController
     @host = user.email 
     @users = @event.users
     @allusers = User.all
+    @title = @event.name
   end
 
   def new
     @event = Event.new
+    @title = 'New event'
   end
 
   def create
@@ -37,6 +40,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find params[:id]
+    @title = 'Edit event'
   end
 
   def update

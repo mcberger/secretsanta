@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @title = 'Edit profile'
   end
 
   def index
+    @title = 'All users'
   end
 
   def show
@@ -25,6 +27,7 @@ class UsersController < ApplicationController
     #
     @pending_events = []
     @past_events = []
+    @title = @user.username
 
     events.each do |event|
       if event.date >= Time.now
@@ -33,5 +36,6 @@ class UsersController < ApplicationController
         @past_events << event
       end
     end
+
   end
 end
