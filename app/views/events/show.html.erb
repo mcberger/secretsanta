@@ -25,8 +25,27 @@
 		</div>
 		<div class="col-md-4">
 			<p><%= link_to "Edit this event", edit_event_path(@event.id) %></p>
-			<p><%= link_to "Add a User to this event", users_path(@event.id) %></p>
-			<p><%= link_to "Create a User for this event", new_user_registration_path %></p>
+			<p><%= link_to "Add a User to this event", "#event_add_users_lb", class: "fancybox" %></p>
+			<p><%= link_to "Create a User for this event", "#event_create_users_lb", class: "fancybox" %></p>
 		</div>
+		<!-- lightbox for adding existing system users -->
+		<div style="display:none;">
+			<div id="event_add_users_lb">
+				<p>
+					A form with a search field as well as an scrollable, sortable alphabetical list of users, ideally sortable by any column.
+					Each user should have a checkbox to add that user to the event.
+				</p>
+			</div>
+		</div>
+		<!-- lightbox for creating system users for the event -->
+		<div style="display:none;">
+			<div id="event_create_users_lb">
+				<p>
+					Duplicate of the Devise Add User form should be here!
+					Plus an option create another user or dismiss the box
+				</p>
+			</div>
+		</div>
+
 	</div>
 </div>			
