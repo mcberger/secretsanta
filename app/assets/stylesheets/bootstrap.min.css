@@ -22,25 +22,39 @@
 
  .darkBg {
  	background: #b30000;
+ 	padding-top: 50px;
  }
 
 .btn {
-	margin: 150px 0px;
+	margin: 100px 0px;
 	font-size: 30px;
 	width: 200px;
 	height: 70px;
 	vertical-align: middle;
+	padding-top: 9px;
 }
 
 .collectonme {
 	text-align: center;
 }
 
+/*styling for login and signup pages */
+.form-box {
+	width: 300px;
+	text-align: center;
+	background-color: white;	
+	margin: 100px auto;
+	padding: 20px; 
+	border-radius: 20px 15px;
+}
+
+.content-wrapper {
+	background-color: #b30000;
+}
 
 
-
-.animated.bounceIn,
+/*.animated.bounceIn,
 .animated.bounceOut {
   -webkit-animation-duration: .75s;
   animation-duration: .75s;
-}
+}*/
