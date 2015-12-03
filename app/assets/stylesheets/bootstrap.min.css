@@ -10,3 +10,37 @@
 	margin-bottom: 100px;
 	margin-top: 75px;
  }
+
+/*styling for home#index*/
+ #maintitle {
+ 	font-size: 100px;
+ 	text-align: center;
+ 	color: white;
+ 	letter-spacing: 2px;
+ 	font-weight: lighter;
+ }
+
+ .darkBg {
+ 	background: #b30000;
+ }
+
+.btn {
+	margin: 150px 0px;
+	font-size: 30px;
+	width: 200px;
+	height: 70px;
+	vertical-align: middle;
+}
+
+.collectonme {
+	text-align: center;
+}
+
+
+
+
+.animated.bounceIn,
+.animated.bounceOut {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
