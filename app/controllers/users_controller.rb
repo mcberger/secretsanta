@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     
     # get user and associated events
     #
-    @user = current_user
+    @user = User.find(params[:id])
     events = @user.events
     #
     # separate user's events into pending and past
