@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # fancybox is a lightbox alternative
 gem 'fancybox-rails'
 # data tables is for displaying data in searchable spreadsheet-like tables
-gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

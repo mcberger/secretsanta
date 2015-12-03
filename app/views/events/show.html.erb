@@ -34,6 +34,24 @@
 				<p>
 					A form with a search field as well as an scrollable, sortable alphabetical list of users, ideally sortable by any column.
 					Each user should have a checkbox to add that user to the event.
+					<%= form_tag add_existing_users_path(@event.id) do %> 
+						<table>
+							<tr>
+								<th><%= submit_tag "Add to Event" %></th>
+								<th>Username</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+							</tr>
+							<% @allusers.each do |user| %>
+								<tr>
+									<td><%= check_box_tag "user_ids[]", user.id %></td>
+									<td><%= user.username %></td>
+									<td><%= user.fname %></td>
+									<td><%= user.lname %></td>
+								</tr>
+							<% end %>
+						</table>  
+					<% end %>
 				</p>
 			</div>
 		</div>

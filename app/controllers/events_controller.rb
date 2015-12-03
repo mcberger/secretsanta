@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     user = User.find join.user_id
     @host = user.email 
     @users = @event.users
+    @allusers = User.all
   end
 
   def new
@@ -55,6 +56,16 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def add_existing_users
+    flash[:notice] = "Route was invoked successfully."
+
+    event = Event.find params[:id]
+    params[:user_ids].each do |user_id|
+      user = User.find user_id
+      user.events << event
+    end
+    redirect_to event_path params[:id]
+  end
 
   private
   def event_params
