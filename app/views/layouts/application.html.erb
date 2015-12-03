@@ -15,6 +15,13 @@
 </head>
 
 <body>
+
+	<%if current_user %>
+		<%= link_to 'logout', destroy_user_session_path, method: 'delete' %>
+	<% else %>
+		<%= link_to 'login', new_user_session_path %>
+	<% end %>
+
 	<%= flash[:notice] %>
 	<%= flash[:alert] %>
 	<%= yield %>
