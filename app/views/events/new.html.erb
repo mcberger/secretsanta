@@ -1,36 +1,38 @@
-<div class="container">
-	<div class = "raw">
-		<div class="col-md-08">
-
-			<% if @event.errors.full_messages.any?%>
-			<ul>
-				<% @event.errors.full_messages.each do |error_message| %>
-				<li> <%= error_message %> </li> <br>
-				<% end %>
-			</ul>
+<body class="content-wrapper">
+	<div class="bigger-form-box animated bounce">
+		<% if @event.errors.full_messages.any?%>
+		<ul>
+			<% @event.errors.full_messages.each do |error_message| %>
+			<li> <%= error_message %> </li> <br>
 			<% end %>
+		</ul>
+		<% end %>
 
-			<%= form_for @event, url: @event do |f| %>
-			<%= f.label :name, 'Name:' %>
-			<%= f.text_field :name %>
-			<br><br>
-			<%= f.label :date, 'Date:' %>
-			<%= f.datetime_select :date %>
-			<br><br>
-			<%= f.label :location, 'Location:' %>
-			<%= f.text_field :location %>
-			<br><br>
-			<%= f.label :deadline, 'Participation deadline:' %>
-			<%= f.datetime_select :deadline %>
-			<br><br>
-			<%= f.label :max_price, 'Maximum gift price:' %>
-			<%= f.text_field :max_price %>
-			<br><br>
-			<%= f.label :min_price, 'Minimum gift price:' %>
-			<%= f.text_field :min_price %>
-			<br><br>
-			<%= f.submit :'Add event' %>
-			<% end %>
-		</div>
+		<h2>New Event</h2>
+		<%= form_for @event, url: @event do |f| %>
+		<%= f.label :name, 'Name:' %>
+		<%= f.text_field :name %>
+		<br><br>
+		<%= f.label :date, 'Date:' %>
+		<%= f.datetime_select :date %>
+		<br><br>
+		<%= f.label :location, 'Location:' %>
+		<%= f.text_field :location %>
+		<br><br>
+		<%= f.label :deadline, 'Participation deadline:' %>
+		<%= f.datetime_select :deadline %>
+		<br><br>
+		<%= f.label :max_price, 'Maximum gift price:' %>
+		<%= f.text_field :max_price %>
+		<br><br>
+		<%= f.label :min_price, 'Minimum gift price:' %>
+		<%= f.text_field :min_price %>
+		<br><br>
+		<%= f.submit :'Add event' %>
+		<% end %>
+	</div>	
+	
+	<div class="bigger-form-box animated bounce">
+		<%= link_to "Back", :back %>
 	</div>
-</div>			
+</body>		
