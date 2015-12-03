@@ -17,5 +17,9 @@
 //= require fancybox
 
 $(document).ready(function() {
-  $("a.fancybox").fancybox();
+	$("a.fancybox").fancybox();
+	$(".flash").click(function(){
+		$(".flash").addClass('animated bounceOutUp');
+		$(".flash").slideUp(5000);
+	});
 });

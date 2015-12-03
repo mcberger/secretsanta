@@ -52,7 +52,7 @@
 	background-color: #b30000;
 }
 
-/*styling for edit profile, event new and event edit pages*/
+/*styling for edit profile, event new, event index and event edit pages*/
 .bigger-form-box {
 	text-align: center;
 }
@@ -63,6 +63,19 @@
 	background-color: white;
 	padding: 20px; 
 	border-radius: 30px;
+}
+
+/*styling for flash messages*/
+.flash {
+	background-color: #5cb85c;
+	font-size: 25px;
+	width: 400px;
+	margin: auto;
+	text-align: center;
+	padding: 20px;
+	border-radius: 20px;
+	color: white;
+	opacity: 0.9;
 }
 
 
