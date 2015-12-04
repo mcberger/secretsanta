@@ -4,13 +4,14 @@
 	<title></title>
 </head>
 <body>
-	<h1>Welcome to Gifter, <%= @email %></h1>
+	<h1>Welcome to Gifter, <%= @user.email %></h1>
     <p>
       You are successfully signed up to Gifter,
-      your email to login is: <%= @email %>.<br>
+      your email to login is: <%= @user.email %>.<br>
       Your corresponding password is: <%= @password %>. <br>
       Please reset your password by clicking on the link below: <br>
-      <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+      <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p> <br>
+      You have also been added to the event: <%= @event.name %>. Find it on your profile page!
     </p>
     <p>
       To login to the site, just follow this link: <%= @url %>.

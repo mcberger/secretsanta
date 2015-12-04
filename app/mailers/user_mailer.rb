@@ -14,19 +14,20 @@ class UserMailer < ApplicationMailer
 		mail(to: @user.email, subject: 'New event created!')
 	end
 
-	def gift_assigned(event, users)
-		@event = event
-		@users = users
-		@url = "http://localhost:3000/users/#{@ .id}"
-		users.each do |user|
-			mail(to: user.email, subject: 'Giftees assigned!')
-		end
-	end
+	# def gift_assigned(event, users)
+	# 	@event = event
+	# 	@users = users
+	# 	@url = "http://localhost:3000/users/#{@ .id}"
+	# 	users.each do |user|
+	# 		mail(to: user.email, subject: 'Giftees assigned!')
+	# 	end
+	# end
 
-	def welcome_email_alt(user)
-		@email = user
+	def welcome_email_alt(event, user)
+		@user = user
+		@event = event
 		@password = "12345678"
 		@url = 'http://localhost:3000/users/sign_in'
-		mail(to: @email, subject: 'Welcome to Gifter!')
+		mail(to: @user.email, subject: 'Welcome to Gifter!')
 	end
 end
