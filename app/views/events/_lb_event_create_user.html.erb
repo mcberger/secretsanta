@@ -1,0 +1,9 @@
+<%= form_tag add_new_users_path(@event.id) do %> 
+<div class="field">
+	<%= label_tag :email %><br />
+	<%= text_area_tag :email %>
+</div>
+<div class="actions">
+	<%= submit_tag "Sign up" %>
+</div>
+<% end %>
