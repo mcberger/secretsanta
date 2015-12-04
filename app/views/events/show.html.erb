@@ -1,32 +1,10 @@
 <div class="container">
 	<div class = "row">
-		<div class="col-md-8">
-
-			<h1><%= @event.name %></h1>
-			<br>
-			<b>Date: </b><%= @event.date %>
-			<br>
-			<b>Location: </b><%= @event.location%>
-			<br>
-			<b>Last possible day to backout: </b><%= @event.deadline%>
-			<br>
-			<b>Host: </b><%= @host %>
-			<br>
-			<b>Maximum gift price: </b><%= @event.max_price%>
-			<br>
-			<b>Minimum gift price: </b><%= @event.min_price%>
-			<br>
-			<b>Participants:</b>
-			<% @users.each do |user| %>
-				<p>
-				<%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %>
-				</p>
-			<% end %>
-		</div>
 		<div class="col-md-4">
 			<p><%= link_to "Edit this event", edit_event_path(@event.id) %></p>
 			<p><%= link_to "Add a User to this event", "#event_add_users_lb", class: "fancybox" %></p>
 			<p><%= link_to "Create a User for this event", "#event_create_users_lb", class: "fancybox" %></p>
+			<p><%= link_to "Secret Santize This Event", "#event_santize_lb", class: "fancybox" %></p>
 		</div>
 		<!-- lightbox for adding existing system users -->
 		<div style="display:none;">
@@ -37,12 +15,12 @@
 					<%= form_tag add_existing_users_path(@event.id) do %> 
 						<table>
 							<tr>
-								<th><%= submit_tag "Add to Event" %></th>
+								<th><%= submit_tag "Add" %></th>
 								<th>Username</th>
 								<th>First Name</th>
 								<th>Last Name</th>
 							</tr>
-							<% @allusers.each do |user| %>
+							<% @allOptOutUsers.each do |user| %>
 								<tr>
 									<td><%= check_box_tag "user_ids[]", user.id %></td>
 									<td><%= user.username %></td>
@@ -61,6 +39,15 @@
 				<p>
 					Duplicate of the Devise Add User form should be here!
 					Plus an option create another user or dismiss the box
+				</p>
+			</div>
+		</div>
+		<!-- lightbox for creating system users for the event -->
+		<div style="display:none;">
+			<div id="event_santize_lb">
+				<p>
+					invoke the santa gift assignment, then show who gives to who
+					<% match_giver_to_giftee @event.id %>
 				</p>
 			</div>
 		</div>

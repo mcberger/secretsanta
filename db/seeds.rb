@@ -56,4 +56,12 @@ Event.create(date:Time.now + 22.days,name:"Christmas 2015",deadline:Time.now + 1
 Event.create(date:Time.now + 388.days,name:"Christmas 2016",deadline:Time.now + 373.days,
 	location:"Amsterdam",max_price:25.00,min_price:15.00)
 
-
+events = Event.all
+user = User.find 1
+events.each do |event|
+	event.users << user
+	join = EventUser.where(event_id: event.id).last
+	join.admin = true
+	join.participation = true
+	join.save
+end
