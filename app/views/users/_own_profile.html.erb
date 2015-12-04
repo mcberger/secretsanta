@@ -1,0 +1,84 @@
+<body class="content-wrapper">
+	<div class="row profile-row">
+
+		<div class="col-md-10">
+			<div class="profile-large-box">
+				<% if @user.fname == nil || @user.lname == nil %>
+				<h2><%= "Welcome, #{@user.email}!" %></h2>
+				<% else %>
+				<h2><%= "Welcome, #{@user.fname} #{@user.lname}!" %></h2>
+				<% end %>
+
+				<h4 class="red-text">Address</h4>
+				<% if @user.address == "" || @user.address == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.address %></h4>
+				<% end %>
+
+				<h4 class="red-text">Phone</h4>
+				<% if @user.phone == "" || @user.phone == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.phone %></h4>
+				<% end %>
+
+				<h4 class="red-text">Email</h4>
+				<% if @user.email == "" || @user.email == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.email %></h4>
+				<% end %>
+
+				<h4 class="red-text">Likes</h4>
+				<% if @user.likes == "" || @user.likes == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.likes %></h4>
+				<% end %>
+
+				<h4 class="red-text">Dislikes</h4>
+				<% if @user.dislikes == "" || @user.dislikes == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.dislikes %></h4>
+				<% end %>
+
+				<h4 class="red-text">Additional Info</h4>
+				<% if @user.add_info == "" ||  @user.add_info == nil %>
+				<h4> none </h4>
+				<% else %>
+				<h4><%= @user.add_info %></h4>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<a href="/users/edit" class="btn btn-success profile-btn animated flipInX">Edit profile</a>
+			<a href="/events/new" class="btn btn-success profile-btn animated flipInX">New event</a>
+		</div>
+	</div>
+
+
+	<div class="row">
+	<div class="column-wrapper-own center-block">
+			<div class="col-md-6 profile-small-box-1-own">
+				<h3>Upcoming events:</h3>
+				<% @pending_events.each do |event| %>
+				<p>
+					<%= link_to event.name, event_path(event.id) %>
+				</p>
+				<% end %>
+			</div>
+
+			<div class="col-md-6 profile-small-box-2">
+				<h3>Past events:</h3>
+				<% @past_events.each do |event| %>
+				<p>
+					<%= link_to event.name, event_path(event.id) %>
+				</p>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>

@@ -18,6 +18,7 @@
  	color: white;
  	letter-spacing: 2px;
  	font-weight: lighter;
+ 	margin-bottom: 100px
  }
 
  .darkBg {
@@ -26,7 +27,6 @@
  }
 
 .btn {
-	margin: 100px 0px;
 	font-size: 30px;
 	width: 200px;
 	height: 70px;
@@ -36,6 +36,16 @@
 
 .collectonme {
 	text-align: center;
+}
+
+.gifter-wrapper {
+	width: 250px;
+	margin: auto;
+}
+
+.btn-wrapper {
+	width: 200px;
+	margin: auto;
 }
 
 /*styling for login and signup pages */
@@ -52,17 +62,65 @@
 	background-color: #b30000;
 }
 
-/*styling for edit profile, event new, event index and event edit pages*/
+/*styling for edit profile, profile, event new, event show, event index and event edit pages*/
 .bigger-form-box {
 	text-align: center;
+	width: 600px;
 }
 
-.event-box, .bigger-form-box {
+.event-box, .profile-large-box, .profile-small-box-1, .profile-small-box-1-own, .profile-small-box-2, .bigger-form-box {
 	margin: 50px auto;
-	width: 600px;
 	background-color: white;
 	padding: 20px; 
 	border-radius: 30px;
+}
+
+.bigger-form-box, .profile-large-box, .event-box {
+	width: 600px;
+}
+
+.profile-small-box-1, .profile-small-box-1-own {
+	width: 290px;
+	margin-right: 5px;
+	margin-top: 0px;
+}
+.profile-small-box-1-own{
+	margin-left: 76px;
+}
+
+.profile-small-box-2 {
+	width: 290px;
+	margin-left: 5px;
+	margin-top: 0px;
+}
+
+.column-wrapper {
+	width: 600px;
+	float: none;
+}
+
+.column-wrapper-own {
+	width: 900px;
+	float: none;
+}
+
+.red-text {
+	color: #5cb85c;
+}
+
+.profile-row {
+	width: 900px;
+	margin: auto;
+}
+
+.profile-btn {
+	margin-top: 50px;
+}
+
+.event-btn {
+	margin-top: 50px;
+	font-size: 20px;
+	white-space:normal;
 }
 
 /*styling for flash messages*/
@@ -77,6 +135,9 @@
 	color: white;
 	opacity: 0.9;
 }
+
+
+
 
 
 /*.animated.bounceIn,

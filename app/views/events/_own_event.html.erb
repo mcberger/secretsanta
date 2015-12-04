@@ -1,0 +1,76 @@
+<body class="content-wrapper">
+	<div class="row profile-row">
+
+		<div class="col-md-10">
+			<div class="profile-large-box">
+
+				<h1><center><%= @event.name %></center></h1>
+				<br>
+				<b>Date: </b><%= @event.date %>
+				<br>
+				<b>Location: </b><%= @event.location%>
+				<br>
+				<b>Last possible day to backout: </b><%= @event.deadline%>
+				<br>
+				<b>Host: </b><%= @host %>
+				<br>
+				<b>Maximum gift price: </b><%= @event.max_price%>
+				<br>
+				<b>Minimum gift price: </b><%= @event.min_price%>
+				<br>
+				<b>Participants:</b>
+				<% @users.each do |user| %>
+					<ul>
+						<li><%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<p><%= link_to "Edit this event", edit_event_path(@event.id), class: "btn btn-success event-btn animated flipInX" %></p>
+			<p><%= link_to "Add a User to this event", "#event_add_users_lb", class: "btn btn-success event-btn animated flipInX fancybox" %></p>
+			<p><%= link_to "Create a User for this event", "#event_create_users_lb", class: "btn btn-success event-btn animated flipInX fancybox" %></p>
+			
+		</div>
+	</div>
+
+	<!-- lightbox for adding existing system users -->
+	<div style="display:none;">
+		<div id="event_add_users_lb">
+			<p>
+				A form with a search field as well as an scrollable, sortable alphabetical list of users, ideally sortable by any column.
+				Each user should have a checkbox to add that user to the event.
+				<%= form_tag add_existing_users_path(@event.id) do %> 
+				<table>
+					<tr>
+						<th><%= submit_tag "Add to Event" %></th>
+						<th>Username</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+					</tr>
+					<% @allusers.each do |user| %>
+					<tr>
+						<td><%= check_box_tag "user_ids[]", user.id %></td>
+						<td><%= user.username %></td>
+						<td><%= user.fname %></td>
+						<td><%= user.lname %></td>
+					</tr>
+					<% end %>
+				</table>  
+				<% end %>
+			</p>
+		</div>
+	</div>
+	<!-- lightbox for creating system users for the event -->
+	<div style="display:none;">
+		<div id="event_create_users_lb">
+			<p>
+				Duplicate of the Devise Add User form should be here!
+				Plus an option create another user or dismiss the box
+			</p>
+		</div>
+	</div>
+
+</div>
+</div>			
