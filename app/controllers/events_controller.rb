@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  helper_method :match_giver_to_giftee, :user_participating_in_event, :event_users, :set_EventUser_column
+  helper_method :match_giver_to_giftee, :user_participating_in_event, :event_exchanges, :event_users, :set_EventUser_column
 
   # Set User user_id's participation or admin to value for 
   # Event event_id as determined by column
@@ -12,6 +12,12 @@ class EventsController < ApplicationController
   # but if value equals false, return non-participating
   def event_users(event_id, value=true)
 
+  end
+
+  # return all exchanges for an event
+  # 
+  def event_exchanges(event_id)
+    return Exchange.where(event_id: event_id)
   end
 
   # return true if user is participating in event

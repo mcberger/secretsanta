@@ -1,0 +1,6 @@
+<% exes = event_exchanges(@event.id) %>	
+<% exes.each do |exchange| %>	
+	<p>
+		<h3><%= "#{exchange.gifter} is giving to #{exchange.giftee}" %></h3>
+	</p>
+<% end %>
