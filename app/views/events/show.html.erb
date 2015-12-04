@@ -46,6 +46,7 @@
 				<p>
 					Duplicate of the Devise Add User form should be here!
 					Plus an option create another user or dismiss the box
+					<%= render 'lb_event_create_user' %>	
 				</p>
 			</div>
 		</div>
@@ -55,6 +56,7 @@
 				<p>
 					invoke the santa gift assignment, then show who gives to who
 					<% match_giver_to_giftee @event.id %>
+					<%= render 'lb_event_show_gift_pairs' %>	
 				</p>
 			</div>
 		</div>
