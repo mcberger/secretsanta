@@ -22,4 +22,11 @@ class UserMailer < ApplicationMailer
 			mail(to: user.email, subject: 'Giftees assigned!')
 		end
 	end
+
+	def welcome_email_alt(user)
+		@email = user
+		@password = "12345678"
+		@url = 'http://localhost:3000/users/sign_in'
+		mail(to: @email, subject: 'Welcome to Gifter!')
+	end
 end

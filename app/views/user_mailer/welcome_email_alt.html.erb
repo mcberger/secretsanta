@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Welcome to Gifter, <%= @email %></h1>
+    <p>
+      You are successfully signed up to Gifter,
+      your email to login is: <%= @email %>.<br>
+      Your corresponding password is: <%= @password %>. <br>
+      Please reset your password by clicking on the link below: <br>
+      <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+
+</body>
+</html>

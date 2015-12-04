@@ -20,9 +20,9 @@
 				<br>
 				<b>Participants:</b>
 				<% @users.each do |user| %>
-					<ul>
-						<li><%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %></li>
-					</ul>
+				<ul>
+					<li><%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %></li>
+				</ul>
 				<% end %>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 				<%= form_tag add_existing_users_path(@event.id) do %> 
 				<table>
 					<tr>
-						<th><%= submit_tag "Add to Event" %></th>
+						<th><%= submit_tag "Add" %></th>
 						<th>Username</th>
 						<th>First Name</th>
 						<th>Last Name</th>
@@ -68,9 +68,19 @@
 			<p>
 				Duplicate of the Devise Add User form should be here!
 				Plus an option create another user or dismiss the box
+				<%= render 'lb_event_create_user' %>
 			</p>
 		</div>
 	</div>
 
-</div>
-</div>			
+	<!-- lightbox for creating system users for the event -->
+	<div style="display:none;">
+		<div id="event_santize_lb">
+			<p>
+				invoke the santa gift assignment, then show who gives to who
+				<% match_giver_to_giftee @event.id %>
+				<%= render 'lb_event_show_gift_pairs' %>	
+			</p>
+		</div>
+	</div>
+	</body>
