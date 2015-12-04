@@ -36,11 +36,17 @@ Rails.application.routes.draw do
   #   map.resources :events, :collection => { :add_existing_users => :post}
   # end
   post "events/:id/add_existing_users" => "events#add_existing_users", as: :add_existing_users
-   post "events/:id/add_new_users" => "events#add_new_users", as: :add_new_users
+  post "events/:id/add_new_users" => "events#add_new_users", as: :add_new_users
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get '/' => 'home#index', as: :home
+
+  # override user_root_path 
+  # This is to allow us to redirect to the user path after editing
+  # the user profile. Currently in a non-working state
+  # 04 Dec 2015
+  # get 'users/:id' => "users#show", as: :user_root
 
   resources :users
   resources :events
