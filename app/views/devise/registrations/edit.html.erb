@@ -44,11 +44,6 @@
               <%= f.text_field :phone, autofocus: true %>
             </div>
             <div class="field">
-              <%= f.label :email %><br />
-              <%= f.text_field :email, autofocus: true %>
-            </div>
-            
-            <div class="field">
               <%= f.label :likes %><br />
               <%= f.text_field :likes, autofocus: true %>
             </div>
@@ -64,8 +59,6 @@
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
             <% end %>
-
-            
 
             <div class="actions">
               <%= f.submit "Update" %>
