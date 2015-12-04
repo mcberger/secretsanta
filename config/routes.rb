@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   #   map.resources :events, :collection => { :add_existing_users => :post}
   # end
   post "events/:id/add_existing_users" => "events#add_existing_users", as: :add_existing_users
+   post "events/:id/add_new_users" => "events#add_new_users", as: :add_new_users
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

@@ -4,10 +4,10 @@
 	<title></title>
 </head>
 <body>
-	<h1>Welcome to Gifter, <%=  %></h1>
+	<h1>Welcome to Gifter, <%= @user.email %></h1>
     <p>
       You are successfully signed up to Gifter,
-      your username is: <%= %>.<br>
+      your email to login is: <%= @user.email %>.<br>
     </p>
     <p>
       To login to the site, just follow this link: <%= @url %>.
