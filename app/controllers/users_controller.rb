@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @title = 'Edit profile'
   end
 
   def index

@@ -13,4 +13,13 @@ class UserMailer < ApplicationMailer
 		@url = "http://localhost:3000/events/#{@event.id}"
 		mail(to: @user.email, subject: 'New event created!')
 	end
+
+	def gift_assigned(event, users)
+		@event = event
+		@users = users
+		@url = "http://localhost:3000/users/#{@ .id}"
+		users.each do |user|
+			mail(to: user.email, subject: 'Giftees assigned!')
+		end
+	end
 end
