@@ -32,11 +32,18 @@ module EventsHelper
   end
 
   def match_giver_to_giftee(event_id)
+
+    # delete the existing exchanges for the event
+    exes = Exchange.where(event_id: event_id)
+    exes.each do |exch|
+      exch.destroy
+    end
+
     # get the event from the id
     event = Event.find event_id
     # get the event's participating users
     users = event.users
-    join = EventUser.where(event_id: @event.id)
+    join = EventUser.where(event_id: event_id)
     optin_users = []
     index = -1
 
