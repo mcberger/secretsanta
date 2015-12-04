@@ -62,7 +62,7 @@
 	background-color: #b30000;
 }
 
-/*styling for edit profile, profile, event new, event index and event edit pages*/
+/*styling for edit profile, profile, event new, event show, event index and event edit pages*/
 .bigger-form-box {
 	text-align: center;
 	width: 600px;
@@ -114,7 +114,13 @@
 }
 
 .profile-btn {
-	margin-top: 50px
+	margin-top: 50px;
+}
+
+.event-btn {
+	margin-top: 50px;
+	font-size: 20px;
+	white-space:normal;
 }
 
 /*styling for flash messages*/
