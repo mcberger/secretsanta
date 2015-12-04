@@ -111,7 +111,7 @@ class EventsController < ApplicationController
        flash[:alert] += "Failed to create user #{email}."
      end 
    end
-   redirect_to event_path event
+   redirect_to event_path @event
  end
 
 

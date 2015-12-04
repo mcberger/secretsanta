@@ -39,8 +39,6 @@
 	<div style="display:none;">
 		<div id="event_add_users_lb">
 			<p>
-				A form with a search field as well as an scrollable, sortable alphabetical list of users, ideally sortable by any column.
-				Each user should have a checkbox to add that user to the event.
 				<%= form_tag add_existing_users_path(@event.id) do %> 
 				<table>
 					<tr>
@@ -66,8 +64,7 @@
 	<div style="display:none;">
 		<div id="event_create_users_lb">
 			<p>
-				Duplicate of the Devise Add User form should be here!
-				Plus an option create another user or dismiss the box
+			Add an email for each user you would like to create, separated by commas.
 				<%= render 'lb_event_create_user' %>
 			</p>
 		</div>
@@ -77,7 +74,7 @@
 	<div style="display:none;">
 		<div id="event_santize_lb">
 			<p>
-				invoke the santa gift assignment, then show who gives to who
+				Below are the gift assignments pertaining to this event.
 				<% match_giver_to_giftee @event.id %>
 				<%= render 'lb_event_show_gift_pairs' %>	
 			</p>
