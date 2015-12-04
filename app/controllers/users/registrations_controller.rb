@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
- before_filter :configure_account_update_params, only: [:update]
+  before_filter :configure_account_update_params, only: [:update]
 
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update).push(:password_confirmation, :current_password, :email, :fname, :lname, :address, :phone, :likes, :dislikes, :add_info)

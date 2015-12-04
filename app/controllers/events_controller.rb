@@ -32,9 +32,19 @@ class EventsController < ApplicationController
     return retval
   end
 
+  # perform the gift assignment
+  #
   def match_giver_to_giftee(event_id)
     # get the event from the id
     event = Event.find event_id
+
+    # clear all related records from the Exchange table first
+    #
+    oldexes = Exchange.where(event_id: @event.id)
+    oldexes.each do |oldex|
+      oldex.destroy
+    end
+    
     # get the event's participating users
     users = event.users
     join = EventUser.where(event_id: @event.id)
