@@ -57,7 +57,7 @@ module EventsHelper
       end
   end
     # shuffle the participating user array
-    optin_users.shuffle
+    optin_users.shuffle!
     # go through the shuffled array and assign n to n+1 and
     # tail to head of the list, and add them to the event
     #
