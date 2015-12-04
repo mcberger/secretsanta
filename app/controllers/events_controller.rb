@@ -106,7 +106,7 @@ class EventsController < ApplicationController
       if @user
         @user.events << @event
         flash[:notice] += "Users #{email} created successfully."
-        UserMailer.welcome_email_alt(@event, @user).deliver_later
+        #UserMailer.welcome_email_alt(@event, @user).deliver_later
       else
        flash[:alert] += "Failed to create user #{email}."
      end 
