@@ -72,21 +72,21 @@ class EventsController < ApplicationController
       event.update event_params
       flash[:notice] = "Your event was modified successfully."
     else
-       flash[:alert] = "There was a problem editing your event."
-    end     
-    redirect_to event_path params[:id]
-  end
+     flash[:alert] = "There was a problem editing your event."
+   end     
+   redirect_to event_path params[:id]
+ end
 
-  def destroy
-  end
+ def destroy
+ end
 
-  def add_existing_users
-    flash[:notice] = "Users have been added to the event successfully."
+ def add_existing_users
+  flash[:notice] = "Users have been added to the event successfully."
 
-    event = Event.find params[:id]
-    params[:user_ids].each do |user_id|
-      user = User.find user_id
-      user.events << event
+  event = Event.find params[:id]
+  params[:user_ids].each do |user_id|
+    user = User.find user_id
+    user.events << event
       # check the user's record in the EventUsers join table,
       # set the participation bit
       EventUser.last.update participation: true
@@ -95,31 +95,30 @@ class EventsController < ApplicationController
   end
 
   def add_new_users
-    event = Event.find(params[:id])
-    puts "----------------WE'RE HERE---------------------------"
-    puts params
-    puts "----------------WE'RE HERE---------------------------"
+    @event = Event.find(params[:id])
     users = params[:email].gsub(/\s+/,"")
     emails = users.split(",")
     flash[:notice] = ""
     flash[:alert]=""
     #creating new users taking the emails from above
     emails.each do |email|
-      if User.create email: email, password: "12345678"
+      @user = User.create email: email, password: "12345678"
+      if @user
+        @user.events << @event
         flash[:notice] += "Users #{email} created successfully."
-        #UserMailer.(user).deliver_later
-       else
+        UserMailer.welcome_email_alt(@event, @user).deliver_later
+      else
        flash[:alert] += "Failed to create user #{email}."
-       end 
+     end 
+   end
+   redirect_to event_path event
+ end
 
-    end
-  end
 
+ private
+ def event_params
+  params.require(:event).permit(:name, :date, :location, :deadline, :max_price, :min_price)
+end
 
-  private
-  def event_params
-    params.require(:event).permit(:name, :date, :location, :deadline, :max_price, :min_price)
-  end
-
-  include EventsHelper
+include EventsHelper
 end
