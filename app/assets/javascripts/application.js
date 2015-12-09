@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
 //= require_tree .
 //= require fancybox
+//= require dataTables/jquery.dataTables
 
 $(document).ready(function() {
 	$("a.fancybox").fancybox();
