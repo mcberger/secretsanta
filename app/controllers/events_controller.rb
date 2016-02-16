@@ -78,6 +78,14 @@ class EventsController < ApplicationController
  end
 
  def destroy
+  @event = Event.find(params[:id])
+  if @event.destroy
+    flash[:notice] = "The event was deleted successfully."
+    redirect_to events_path
+  else
+    flash[:alert] = "There was a problem deleting the event."
+    redirect_to @event
+  end
  end
 
  def add_existing_users

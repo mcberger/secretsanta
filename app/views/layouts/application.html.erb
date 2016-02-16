@@ -9,18 +9,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+	<link rel="icon" href="/assets/santa_s_hat.ico">
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 	<%= csrf_meta_tags %>
 </head>
 
 <body>
-
-	<%if current_user %>
-		<%= link_to 'logout', destroy_user_session_path, method: 'delete' %>
-	<% else %>
-		<%= link_to 'login', new_user_session_path %>
-	<% end %>
 
 	<% if flash[:notice] %>
 		<div class="flash"> 

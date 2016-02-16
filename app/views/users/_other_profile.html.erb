@@ -1,4 +1,7 @@
 <body class="content-wrapper">
+
+	<%= render :partial => "/layouts/navbar" %>
+	
 	<div class="profile-large-box">
 		<% if @user.fname == nil || @user.lname == nil %>
 			<h1><center><%= @user.email %></center></h1>

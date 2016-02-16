@@ -1,11 +1,14 @@
-<h1 class="animated hinge"> Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<body class="content-wrapper">
+	<%= render :partial => "/layouts/navbar" %>
+	
+	<div class="event-box animated bounce">
+		<h1><center>All Users</center></h1>
 
-<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<ul>
+			<% @users.each do |user| %>
+			<li> <%= link_to user.email, user_path(user) %> </li>
+			<% end %>
+		</ul>
 
-
+	</div>
+</body>
