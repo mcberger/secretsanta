@@ -1,7 +1,9 @@
 <body class="content-wrapper">
+
+	<%= render :partial => "/layouts/navbar" %>
+
 	<div class="bigger-form-box animated bounce">
 		<h1>Edit Event</h1>
-		<p>Find me in app/views/events/edit.html.erb</p>
 
 		<% if @event.errors.full_messages.any?%>
 		<ul>
@@ -32,6 +34,13 @@
 		<br><br>
 		<%= f.submit :'change event' %>
 		<% end %>
+	</div>
+
+	<div class="bigger-form-box animated bounce">
+
+	  <h3>Delete this event</h3>
+
+	  <p>Unhappy? <%= button_to "Delete", event_path(@event), method: :delete %></p>
 	</div>
 
 	<div class="bigger-form-box animated bounce">

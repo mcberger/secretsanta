@@ -68,14 +68,15 @@
 	width: 600px;
 }
 
-.event-box, .profile-large-box, .profile-small-box-1, .profile-small-box-1-own, .profile-small-box-2, .bigger-form-box {
+.event-box, .profile-large-box, .profile-large-box-alt, .profile-small-box-1, .profile-small-box-1-own, .profile-small-box-2, .bigger-form-box {
 	margin: 50px auto;
+	margin-top: 100px;
 	background-color: white;
 	padding: 20px; 
 	border-radius: 30px;
 }
 
-.bigger-form-box, .profile-large-box, .event-box {
+.bigger-form-box, .profile-large-box, .profile-large-box-alt, .event-box {
 	width: 600px;
 }
 
@@ -112,9 +113,10 @@
 .profile-row {
 	width: 900px;
 	margin: auto;
+	margin-top: 100px;
 }
 
-.profile-btn {
+.profile-btn, .profile-large-box {
 	margin-top: 50px;
 }
 
@@ -130,6 +132,7 @@
 	font-size: 25px;
 	width: 400px;
 	margin: auto;
+	margin-top: 60px;
 	text-align: center;
 	padding: 20px;
 	border-radius: 20px;
@@ -137,7 +140,19 @@
 	opacity: 0.9;
 }
 
+/*styling for navbar*/
+a.nav-links:link, a.nav-links:visited {
+	color:  #b30000;
+}
 
+a.nav-links:hover {
+	color: #5cb85c;
+}
+
+.logo {
+	width: 64px;
+	margin: 0px;
+}
 
 
 
