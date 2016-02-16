@@ -86,9 +86,9 @@ class EventsController < ApplicationController
     flash[:alert] = "There was a problem deleting the event."
     redirect_to @event
   end
- end
+end
 
- def add_existing_users
+def add_existing_users
   flash[:notice] = "Users have been added to the event successfully."
 
   event = Event.find params[:id]
@@ -122,9 +122,8 @@ class EventsController < ApplicationController
    redirect_to event_path @event
  end
 
-
- private
- def event_params
+private
+def event_params
   params.require(:event).permit(:name, :date, :location, :deadline, :max_price, :min_price)
 end
 
