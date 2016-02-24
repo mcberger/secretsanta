@@ -3,6 +3,6 @@
 	<p>
 		<% gifter = User.find exchange.gifter %>
 		<% giftee = User.find exchange.giftee %>
-		<h3><%= "#{gifter.fname} #{gifter.lname} is giving to #{giftee.fname} #{giftee.lname}" %></h3>
+		<h3><%= "#{gifter.email} is giving to #{giftee.email}" %></h3>
 	</p>
 <% end %>

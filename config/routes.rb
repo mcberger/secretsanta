@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   # end
   post "events/:id/add_existing_users" => "events#add_existing_users", as: :add_existing_users
   post "events/:id/add_new_users" => "events#add_new_users", as: :add_new_users
+  patch "events/:id/add_participation" => "events#add_participation", as: :add_participation
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

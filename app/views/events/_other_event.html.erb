@@ -1,29 +1,29 @@
 <body class="content-wrapper">
 
 	<%= render :partial => "/layouts/navbar" %>
-	
+
 	<div class="profile-large-box-alt">
 
-			<h1><center><%= @event.name %></center></h1>
-			<br>
-			<b>Date: </b><%= @event.date %>
-			<br>
-			<b>Location: </b><%= @event.location%>
-			<br>
-			<b>Last possible day to backout: </b><%= @event.deadline%>
-			<br>
-			<b>Host: </b><%= @host %>
-			<br>
-			<b>Maximum gift price: </b><%= @event.max_price%>
-			<br>
-			<b>Minimum gift price: </b><%= @event.min_price%>
-			<br>
-			<b>Participants:</b>
-			<% @users.each do |user| %>
-				<ul>
-					<li><%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %></li>
-				</ul>
-			<% end %>
+		<h1><center><%= @event.name %></center></h1>
+		<br>
+		<b>Date: </b><%= @event.date %>
+		<br>
+		<b>Location: </b><%= @event.location%>
+		<br>
+		<b>Last possible day to backout: </b><%= @event.deadline%>
+		<br>
+		<b>Host: </b><%= @host %>
+		<br>
+		<b>Maximum gift price: </b><%= @event.max_price%>
+		<br>
+		<b>Minimum gift price: </b><%= @event.min_price%>
+		<br>
+		<b>Participants:</b>
+		<% @users.each do |user| %>
+			<ul>
+				<li><%= "#{user.username} #{user.fname} #{user.lname} #{user.email}" %></li>
+			</ul>
+		<% end %>
 	</div>
 		
 </body>			

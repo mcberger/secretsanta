@@ -28,6 +28,7 @@ gem 'fancybox-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 gem 'animate.css-rails', '~> 3.2'
+gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

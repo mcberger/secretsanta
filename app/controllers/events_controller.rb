@@ -113,6 +113,7 @@ def add_existing_users
       @user = User.create email: email, password: "12345678"
       if @user
         @user.events << @event
+        EventUser.last.update participation: true
         flash[:notice] += "Users #{email} created successfully."
         #UserMailer.welcome_email_alt(@event, @user).deliver_later
       else
