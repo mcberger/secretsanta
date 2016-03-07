@@ -9,7 +9,5 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-<<<<<<< HEAD
-=======
+
 Rails.application.config.assets.precompile += %w( snowfall.jquery.min.js )
->>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
