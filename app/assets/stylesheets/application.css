@@ -13,6 +13,11 @@
  
  *= require_tree .
  *= require dataTables/jquery.dataTables
+<<<<<<< HEAD
  *= require_self
  *= require fancybox
+=======
+ *= require fancybox
+ *= require_self
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
  */

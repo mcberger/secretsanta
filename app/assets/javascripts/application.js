@@ -12,9 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require_tree .
 //= require fancybox
 //= require dataTables/jquery.dataTables
+=======
+//= require dataTables/jquery.dataTables
+//= require fancybox
+//= require_tree .
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
 
 $(document).ready(function() {
 	$("a.fancybox").fancybox();
@@ -22,4 +28,16 @@ $(document).ready(function() {
 		$(".flash").addClass('animated bounceOutUp');
 		$(".flash").slideUp(5000);
 	});
+<<<<<<< HEAD
 });
+
+// $(document).ready(function(){
+
+// 	$(document).snowfall();
+// 	document.body.className  = "darkBg";
+// 	$(document).snowfall({collection : '.collectonme', flakeCount : 250});
+
+// });
+=======
+});
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e

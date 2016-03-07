@@ -94,6 +94,10 @@ GEM
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
+<<<<<<< HEAD
+=======
+    pg (0.18.4)
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -116,6 +120,14 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+<<<<<<< HEAD
+=======
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -174,7 +186,15 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-datatables-rails!
   jquery-rails
+<<<<<<< HEAD
   rails (= 4.2.5)
+=======
+  pg
+  rails (= 4.2.5)
+  rails_12factor
+  rails_serve_static_assets
+  rails_stdout_logging
+>>>>>>> aa8cc3ea1997a4bedebcea467c4fdb87770f9a3e
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
