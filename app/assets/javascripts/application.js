@@ -14,17 +14,20 @@
 //= require jquery_ujs
 
 //= require dataTables/jquery.dataTables
+//= require snowfall
 //= require fancybox
-//= require_tree .
+//= require events
+//= require bootstrap
+
+
 
 $(document).ready(function() {
+
 	$("a.fancybox").fancybox();
 	$(".flash").click(function(){
 		$(".flash").addClass('animated bounceOutUp');
 		$(".flash").slideUp(5000);
 	});
-});
-$(document).ready(function(){
 
 	$(document).snowfall();
 	document.body.className  = "darkBg";

@@ -22,6 +22,7 @@ module Secretsanta
 
     config.serve_static_files = true
     config.assets.compile = true
+    config.assets.precompile =  ['*.js', '*.css', '*.css.erb'] 
 
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
