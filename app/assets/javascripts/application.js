@@ -12,14 +12,34 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require fancybox
+
 //= require dataTables/jquery.dataTables
+//= require snowfall
+//= require fancybox
+//= require events
+//= require bootstrap
+
+
 
 $(document).ready(function() {
+
 	$("a.fancybox").fancybox();
 	$(".flash").click(function(){
 		$(".flash").addClass('animated bounceOutUp');
 		$(".flash").slideUp(5000);
 	});
+
+	// $(document).snowfall();
+	// document.body.className  = "darkBg";
+	// $(document).snowfall({collection : '.collectonme', flakeCount : 250});
+
 });
+
+// $(document).ready(function(){
+
+// 	$(document).snowfall();
+// 	document.body.className  = "darkBg";
+// 	$(document).snowfall({collection : '.collectonme', flakeCount : 250});
+
+// });
+

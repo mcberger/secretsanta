@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,12 @@ gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 gem 'animate.css-rails', '~> 3.2'
 gem 'simple_form'
+
+
+# needed for Heroku deployment
+gem 'rails_serve_static_assets'
+gem 'rails_stdout_logging'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -51,3 +57,13 @@ group :development do
   gem 'spring'
 end
 
+
+group :development do
+	# Use sqlite3 as the database for Active Record
+	gem 'sqlite3'   
+end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
