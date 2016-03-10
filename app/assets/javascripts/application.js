@@ -29,9 +29,9 @@ $(document).ready(function() {
 		$(".flash").slideUp(5000);
 	});
 
-	$(document).snowfall();
-	document.body.className  = "darkBg";
-	$(document).snowfall({collection : '.collectonme', flakeCount : 250});
+	// $(document).snowfall();
+	// document.body.className  = "darkBg";
+	// $(document).snowfall({collection : '.collectonme', flakeCount : 250});
 
 });
 
